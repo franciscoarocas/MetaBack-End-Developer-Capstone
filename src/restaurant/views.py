@@ -1,10 +1,14 @@
 from django.shortcuts import render
 
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateAPIView, DestroyAPIView
+from rest_framework.viewsets import ModelViewSet
+from rest_framework import permissions
 
 from rest_framework.decorators import api_view
-from .models import Menu
-from .serializers import MenuItemSerializer
+from .models import Menu, Table
+from .serializers import MenuItemSerializer, BookingSerializer, UserSerializer
+
+from django.contrib.auth.models import User
 
 # Create your views here.
 from django.shortcuts import render
@@ -23,3 +27,14 @@ class MenuItemsView(ListCreateAPIView):
 class SingleMenuItemView(RetrieveUpdateAPIView, DestroyAPIView):
   queryset = Menu.objects.all()
   serializer_class = MenuItemSerializer
+
+
+class BookingViewSet(ModelViewSet):
+  queryset = Table.objects.all()
+  serializer_class = BookingSerializer
+
+
+class UserViewSet(ModelViewSet):
+   queryset = User.objects.all()
+   serializer_class = UserSerializer
+   permission_classes = [permissions.IsAuthenticated]
