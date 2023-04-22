@@ -15,11 +15,11 @@ class MenuItemSerializer(ModelSerializer):
 
   class Meta:
     model = Menu
-    fields = "__ALL__"
+    fields = "__all__"
 
 
 
 class BookingSerializer(ModelSerializer):
   class Meta:
     model = Table
-    fields = "__ALL__"
+    fields = "__all__"

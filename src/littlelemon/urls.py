@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
-    path('api-token-auth/', obtain_auth_token),
-    #path('restaurant/', include('restaurant.urls')),
-    path('restaurant/menu/',include('restaurant.urls')),
+    #path('api-token-auth/', obtain_auth_token),
+    path('restaurant/', include('restaurant.urls')),
+    #path('restaurant/menu/',include('restaurant.urls')),
 ]

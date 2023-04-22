@@ -4,15 +4,15 @@ from django.db import models
 class Table(models.Model):
 
   name = models.CharField(max_length=256)
-  No_of_guest = models.IntegerField()
-  BookingDate = models.DateTimeField()
+  no_of_guest = models.IntegerField()
+  bookingDate = models.DateTimeField()
 
 
 class Menu(models.Model):
 
-  Title = models.CharField(max_length=256)
-  Price = models.DecimalField(max_digits=10, decimal_places=2)
-  Inventory = models.IntegerField()
+  title = models.CharField(max_length=256)
+  price = models.DecimalField(max_digits=10, decimal_places=2)
+  inventory = models.IntegerField()
 
   def __str__(self):
     return f'{self.title} : {str(self.price)}'
